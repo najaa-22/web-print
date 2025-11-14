@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome To Registration Form</title>
+<style>
+label{
+ width: 140px;
+ font-size:20px;
+ display: inline-block;
+ text-align: right;
+ }
+input{
+ padding: 6px;
+ width:300px;
+ font-size: 14px;
+ border-radius: 4px;
+ border-color:blue;
+ }
+button{
+width:10%;
+padding:10px;
+font-size:20px;
+background-color:green;
+align-center;
+}
+</style>
+<script>
+function validate()
+{
+var name = document.getElementById("nam").value;
+var passwd = document.getElementById("pwd").value;
+var cnpasswd = document.getElementById("cn").value;
+var phone = document.getElementById("pno").value;
+if(name == "")
+{
+alert('Name cannot be blank');
+return false;
+}
+else if(!isNaN(name))
+{
+alert('Name required alphabets!');
+return false;
+}
+else if(passwd == "")
+{ alert('Enter a Password');
+ return false;
+}
+
+else if(passwd.length <8)
+{ alert('Password required atleast 8 characters');
+ return false;
+}
+else if(phone == "")
+{
+alert('Enter your phone number!');
+return false;
+}
+else if(isNaN(phone))
+{
+ alert('Invalid Phone Number');
+ return false;
+}
+else if(phone.length !=10)
+{
+alert('Not a Valid Phone Number (need 10 digits)');
+return false;
+}
+else if(passwd == "")
+{ alert('Enter a Password');
+ return false;
+}
+else if(passwd!=cnpasswd)
+{ alert('password doesnot match');
+ return false;
+}
+else
+{
+alert('Thank You for Registration');
+return true;
+}
+}
+</script>
+</head>
+<body bgcolor="lightgrey">
+<h1 style=color:brown><center>FORM VALIDATION</center></h1>
+<form style="width:900px; position:relative; left:500;" onsubmit="validate()"/>
+<label style=color:brown> Name</label>&nbsp&nbsp <input type="text" placeholder="Name" id="nam"><br><br>
+<label style=color:brown> Password</label> &nbsp&nbsp<input type="password" id = "pwd"><br></br>
+<label style=color:brown>Confirm&nbspPassword</label>&nbsp&nbsp <input type="password" id = "cn"><br></br>
+<label style=color:brown>Phone Number</label>&nbsp&nbsp <input type="text" placeholder="Phone Number" id="pno"><br><br>
+<form style="text-align: center;">
+ <button type="submit">Submit</button>
+</form>
+</body>
+</html>
